@@ -11,7 +11,7 @@ With this web app, users can:
 - Enjoy the sweet release of deleting a to-do item and pretending it never existed in the first place. Ahh, the joys of procrastination. 😎
 
 ## Used Technologies
-#
+
 > This project wouldn't have been possible without the help of some awesome open source software packages. We want to give a big shoutout and thank you to all the amazing developers and maintainers out there! 🙌🎉
 
 - [Java - 17] - This programming language is out of this world! 🌌
@@ -24,7 +24,7 @@ With this web app, users can:
 And let's not forget that this project is itself open source, with a shiny public repository on GitHub for all to see. Go ahead, take a look! 😉
 
 ## Installation
-#
+
 > To run this project, you'll need Java 1.8+, Mysql Server, and an IDE with Spring Boot support.
 
 **Just clone this repository to get started:**
@@ -32,19 +32,18 @@ And let's not forget that this project is itself open source, with a shiny publi
 `git clone https://github.com/arxmondal/todo.git`
 
 ## User Instructions
-#
+
 > It's as easy as running the project and visiting http://127.0.0.1/8080 in your browser.
 
 ## Contact Developer
-#
+
 > If you have any questions or suggestions, don't be a stranger! Shoot me an email at arnabmondal@duck.com. I'm always happy to hear from you. 😄
 
 ## License
-#
+
 ⚖ [**MIT**](https://opensource.org/licenses/MIT)
 
 > Absolutely FREE and OPEN SOURCE? Hell yeah, that's the way to be! 🤘🔥
 
-#
 
 ##### Made with 💗 from kolkata
