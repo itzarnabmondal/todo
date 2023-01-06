@@ -3,7 +3,6 @@
 > A simple and user-friendly to-do web application is here to help you organize and streamline your daily tasks and responsibilities.
 
 ## Features
-#
 With this web app, users can:
 
 - Procrastinate in style by adding new to-do items.
