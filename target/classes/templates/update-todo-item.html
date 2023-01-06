@@ -1,0 +1,60 @@
+<!-- Declare that this is an HTML document -->
+<!DOCTYPE html>
+
+<!-- Start the HTML document -->
+<html xmlns:th="http://www.thymeleaf.org">
+
+<!-- Set the document's head -->
+
+<head>
+    <!-- Declare the character encoding for the document -->
+    <meta charset="utf-8">
+    <!-- Declare compatibility with Internet Explorer -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Set the viewport to adjust for different device sizes -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Link to the Bootstrap CSS file using Thymeleaf -->
+    <link th:rel="stylesheet" th:href="@{/webjars/bootstrap/3.4.1/css/bootstrap.min.css} " />
+</head>
+
+<!-- Start the document's body -->
+
+<body>
+    <!-- Create a container element -->
+    <div class="container">
+        <!-- Create a column element with a width of 6 columns -->
+        <div class="col-md-6">
+            <!-- Create a form element with a Thymeleaf action and object attribute and a POST method -->
+            <form action="#" th:action="@{/todo/{id}(id=${todo.id})}" th:object="${todo}" method="POST">
+                <!-- Create a form group element -->
+                <div class="form-group">
+                    <!-- Create a label element for the input field -->
+                    <label for="description">Description</label>
+                    <!-- Create an input field with a "form-control" class and a "description" id, and bind it to a Thymeleaf field -->
+                    <input class="form-control" type="text" th:field="*{description}" id="description"
+                        placeholder="Add a description">
+                    <!-- If the "description" field has errors, display them using a Thymeleaf errors attribute -->
+                    <span th:if="${#fields.hasErrors('description')}" th:errors="*{description}"></span>
+                </div>
+                <!-- Create a checkbox element with a label and bind it to a Thymeleaf field -->
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" th:checked="${complete} == true" th:field="*{complete}" id="complete" />
+                        Complete
+                    </label>
+                </div>
+
+                <!-- Create a button element with a "btn" and "btn-default" class to submit the form -->
+                <button class="btn btn-default" type="submit">Update</button>
+
+                <!-- Create hidden input fields for the "createdDate" and "modifiedDate" fields and bind them to Thymeleaf fields -->
+                <input type="hidden" th:field="*{createdDate}" />
+                <input type="hidden" th:field="*{modifiedDate}" />
+            </form>
+        </div>
+    </div>
+</body>
+
+<!-- End the HTML document -->
+
+</html>

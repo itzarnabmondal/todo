@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Import Bootstrap CSS -->
+    <link th:rel="stylesheet" th:href="@{/webjars/bootstrap/3.4.1/css/bootstrap.min.css} " />
+</head>
+
+<body background="banner.jpg">
+    <div class="container">
+        <h1 class="text-center">EASY TODO</h1>
+        <hr />
+        <!-- Display the current date -->
+        <p th:text="|Organize your ${today}|">Today</p>
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>Actions</th>
+                    <th>Id</th>
+                    <th>Description</th>
+                    <th>Complete</th>
+                    <th>Created Date</th>
+                    <th>Modified Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Iterate through the todo items and display their values in a table row -->
+                <tr th:each="item : ${todoItems}" th:class="${item.complete} ? success : warning">
+                    <td>
+                        <!-- Group of buttons for editing and deleting a todo item -->
+                        <div class="btn btn-group-sm" role="group">
+                            <a class="btn btn-info" th:href="@{/edit/{id}(id=${item.id})}">Edit</a>
+                            <a class="btn btn-danger" th:href="@{/delete/{id}(id=${item.id})}">Delete</a>
+                        </div>
+                    </td>
+                    <!-- Display the values of the todo item -->
+                    <td th:text="${item.id}">item_id</td>
+                    <td th:text="${item.description}">item_description</td>
+                    <td th:text="${item.complete}">item_complete</td>
+                    <td th:text="${item.createdDate}">item_created_date</td>
+                    <td th:text="${item.modifiedDate}">item_modified_date</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Link to add a new todo item -->
+        <p><a class="btn btn-success" href="/create-todo">Add New</a></p>
+    </div>
+
+    <!-- Import jQuery and Bootstrap JavaScript -->
+    <script th:src="@{/webjars/jquery/3.6.0/jquery.min.js}"></script>
+    <script th:src="@{/webjars/bootstrap/3.4.1/js/bootstrap.min.js}"></script>
+
+
+</body>
+
+</html>
