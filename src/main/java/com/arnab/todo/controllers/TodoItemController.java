@@ -89,7 +89,7 @@ public class TodoItemController {
      */
 
     @PostMapping("/todo/{id}")
-    public String updateTodoItem(@PathVariable("id") long id, @Valid TodoItem todoItem, BindingResult result,
+    public String updateTodoItem(@PathVariable long id, @Valid TodoItem todoItem, BindingResult result,
             Model model) {
         if (result.hasErrors()) {
             todoItem.setId(id);

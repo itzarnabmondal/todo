@@ -46,7 +46,7 @@ public class TodoFormController {
      * @return the name of the template to render
      */
     @GetMapping("/edit/{id}")
-    public String showUpdateForm(@PathVariable("id") long id, Model model) {
+    public String showUpdateForm(@PathVariable long id, Model model) {
         TodoItem todoItem = todoItemRepository
                 .findById(id)
                 .orElseThrow(() -> new IllegalArgumentException("TodoItem not found"));
@@ -64,7 +64,7 @@ public class TodoFormController {
      * @return a redirect to the root path
      */
     @GetMapping("/delete/{id}")
-    public String deleteTodoItem(@PathVariable("id") long id, Model model) {
+    public String deleteTodoItem(@PathVariable long id, Model model) {
         TodoItem todoItem = todoItemRepository
                 .findById(id)
                 .orElseThrow(() -> new IllegalArgumentException("TodoItem not found"));

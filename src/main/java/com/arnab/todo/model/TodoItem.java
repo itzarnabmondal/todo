@@ -65,7 +65,7 @@ public class TodoItem {
      */
     @Override
     public String toString() {
-        return String.format("TodoItem{id=%d, description='%s', complete='%s', createdDate='%s', modifiedDate='%s'}",
+        return "TodoItem{id=%d, description='%s', complete='%s', createdDate='%s', modifiedDate='%s'}".formatted(
                 id, description, complete, createdDate, modifiedDate);
     }
 
